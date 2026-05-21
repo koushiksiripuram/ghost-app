@@ -41,23 +41,23 @@ pipeline {
             }
         }
 
-        stage('Redeploy Containers') {
-            steps {
+        // stage('Redeploy Containers') {
+        //     steps {
 
-                sh 'docker compose pull'
+        //         sh 'docker compose pull'
 
-                sh 'docker compose up -d --build'
+        //         sh 'docker compose up -d --build'
 
-            }
-        }
+        //     }
+        // }
 
-        stage('Cleanup') {
-            steps {
+        // stage('Cleanup') {
+        //     steps {
 
-                sh 'docker image prune -f'
+        //         sh 'docker image prune -f'
 
-            }
-        }
+        //     }
+        // }
     }
 
     post {
@@ -65,6 +65,7 @@ pipeline {
         success {
 
             echo 'Deployment completed successfully!'
+            build job: 'terraform'
 
         }
 
