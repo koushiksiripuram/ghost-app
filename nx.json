@@ -5,6 +5,7 @@
             "{projectRoot}/**/*",
             "sharedGlobals"
         ],
+        
         "sharedGlobals": [
             "{workspaceRoot}/.npmrc",
             "{workspaceRoot}/ghost/tsconfig.json",
